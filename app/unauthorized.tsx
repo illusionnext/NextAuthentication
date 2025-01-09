@@ -1,11 +1,11 @@
-// import Login from "@/app/components/Login";
+import LoginButton from "@/components/csr/login-button";
 
 export default function Unauthorized() {
   return (
-    <main>
-      <h1>401 - Unauthorized</h1>
+    <main className="grid place-content-center place-items-center min-h-screen">
+      <h1 className="text-rose-700">401 - Unauthorized</h1>
       <p>Please log in to access this page.</p>
-      {/*<Login />*/}
+      <LoginButton />
     </main>
   );
 }

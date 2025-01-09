@@ -6,7 +6,7 @@ import { login } from "@/lib/actions/auth";
 
 export default function LoginButton() {
   return (
-    <Button variant="outline" onClick={() => login()}>
+    <Button variant="aquamarine" onClick={() => login()}>
       Log in with
       <Image
         title="Log in With Github"
