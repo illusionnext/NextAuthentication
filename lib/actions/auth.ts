@@ -2,8 +2,11 @@
 import "server-only";
 import { signIn, signOut } from "@/auth";
 
-export const login = async () => {
-  await signIn("github", { redirectTo: "/" });
+export const loginGithub = async () => {
+  await signIn("github", { redirectTo: "/dashboard" });
+};
+export const loginGoogle = async () => {
+  await signIn("google", { redirectTo: "/dashboard" });
 };
 
 export const logout = async () => {

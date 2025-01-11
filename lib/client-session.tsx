@@ -1,21 +1,17 @@
-"use server";
-import "server-only";
+"use client";
+import { useSession } from "next-auth/react";
 import Image from "next/image";
-import { auth } from "@/auth";
-import LogoutButton from "@/components/csr/log-out";
 
-export default async function User() {
-  const session = await auth();
-  return (
+export default function ClientProfile() {
+  const { data: session } = useSession();
+  return session ? (
     <>
-      <h1 className="text-violet-600">Next Auth v5 Beta + Next 15 Canary</h1>
       <p>
         User signed in with the name:{" "}
         <strong className="text-green-400">{session?.user?.name}</strong>
       </p>
       <p>
-        {" "}
-        User signed in with the email:{" "}
+        Signed in as{" "}
         <strong className="text-green-400">{session?.user?.email}</strong>
       </p>
       <Image
@@ -25,7 +21,8 @@ export default async function User() {
         width={50}
         height={50}
       />
-      <LogoutButton />
     </>
+  ) : (
+    <p>Not signed in</p>
   );
 }

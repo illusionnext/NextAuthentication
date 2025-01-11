@@ -16,8 +16,12 @@ const nextConfig: NextConfig = {
     NEXT_PUBLIC_SCOPE: process.env.NEXT_PUBLIC_SCOPE,
 
     NEXT_AUTH_SECRET: process.env.AUTH_SECRET,
+
     NEXT_GITHUB_ID: process.env.AUTH_GITHUB_ID,
     NEXT_GITHUB_SECRET: process.env.AUTH_GITHUB_SECRET,
+
+    NEXT_GOOGLE_ID: process.env.AUTH_GOOGLE_ID,
+    NEXT_GOOGLE_SECRET: process.env.AUTH_GOOGLE_SECRET,
   },
   images: {
     remotePatterns: [
